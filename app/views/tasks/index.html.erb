@@ -1,1 +1,17 @@
+
+<% if notice.present? %>
+  <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg" id="notice">
+    <%= notice %>
+  </p>
+<% end %>
+
 <h1 class="font-bold text-2xl">Task manager</h1>
+
+<%= render "form", task: @task %>
+
+<h2 class="font-bold text-lg mb-7">Tasks</h2>
+
+<ol class="px-5" data-controller="tasks">
+  <!-- Short hand for looping over all tasks and displaying the _task partial!! -->
+  <%= render @tasks %>
+</ol>
